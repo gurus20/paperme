@@ -17,15 +17,15 @@ function Intro({ nextStep, handleChange, values }) {
                 <input
                     type="text"
                     placeholder="Full Name"
-                    value={values.name}
-                    onChange={handleChange('name')}
+                    value={values.intro.name}
+                    onChange={handleChange}
                     className="form-control mb-3"
                 />
 
                 <input
                     type="text"
                     placeholder="Designation"
-                    value={values.designation}
+                    value={values.intro.designation}
                     onChange={handleChange('designation')}
                     className="form-control mb-3"
                 />

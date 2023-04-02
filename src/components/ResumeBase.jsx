@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import Intro from "./Intro";
-import Links from "./Links"
+import Links from "./Contact"
 import Preview from "./Preview";
 
 export default class ResumeBase extends Component {
 
     state = {
         step: 1,
-        name: '',
-        designation: '',
-        github: '',
-        linkedin: '',
+        intro: {
+            name: "",
+            designation: ""
+        }
     }
 
     // go back to previous step
@@ -32,8 +32,8 @@ export default class ResumeBase extends Component {
 
     render() {
         const { step } = this.state
-        const { name, designation, github, linkedin } = this.state
-        const values = { name, designation, github, linkedin }
+        const { intro, contact, skills } = this.state
+        const values = { intro, contact, skills }
 
         switch (step) {
             case 1:
