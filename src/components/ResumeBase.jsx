@@ -7,10 +7,8 @@ export default class ResumeBase extends Component {
 
     state = {
         step: 1,
-        intro: {
-            name: "",
-            designation: ""
-        }
+        name: "",
+        designation: ""
     }
 
     // go back to previous step
@@ -32,8 +30,8 @@ export default class ResumeBase extends Component {
 
     render() {
         const { step } = this.state
-        const { intro, contact, skills } = this.state
-        const values = { intro, contact, skills }
+        const { name, designation } = this.state
+        const values = { name, designation }
 
         switch (step) {
             case 1:
@@ -44,7 +42,7 @@ export default class ResumeBase extends Component {
                         values={values}
                     />
                 )
-            case 2:
+            case 3:
                 return (
                     <Links
                         prevStep={this.prevStep}
@@ -53,7 +51,7 @@ export default class ResumeBase extends Component {
                         values={values}
                     />
                 )
-            case 3:
+            case 2:
                 return (
                     <Preview
                         prevStep={this.prevStep}
