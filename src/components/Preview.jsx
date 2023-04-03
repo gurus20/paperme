@@ -28,11 +28,11 @@ function Preview({ prevStep, handleChange, values }) {
                 <div id="resume">
                     <div className="row">
                         <div className="col-6">Name</div>
-                        <div className="col-6">{values.name}</div>
+                        <div className="col-6"></div>
                     </div>
                     <div className="row">
                         <div className="col-6">Designation</div>
-                        <div className="col-6">{values.designation}</div>
+                        <div className="col-6"></div>
                     </div>
                 </div>
 
