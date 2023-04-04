@@ -1,6 +1,6 @@
 import { jsPDF } from "jspdf";
 
-function Preview({ prevStep, handleChange, values }) {
+function Preview({ prevStep, formData, setFormData }) {
 
     const Export = () => {
         const doc = new jsPDF('l', 'mm', [1200, 1210]);
@@ -14,11 +14,6 @@ function Preview({ prevStep, handleChange, values }) {
         });
     }
 
-    const Previous = (e) => {
-        e.preventDefault();
-        prevStep();
-    }
-
     return (
         <div className="container">
             <div className="m-auto col-5">
@@ -28,19 +23,19 @@ function Preview({ prevStep, handleChange, values }) {
                 <div id="resume">
                     <div className="row">
                         <div className="col-6">Name</div>
-                        <div className="col-6"></div>
+                        <div className="col-6">{ formData.intro.name }</div>
                     </div>
                     <div className="row">
                         <div className="col-6">Designation</div>
-                        <div className="col-6"></div>
+                        <div className="col-6">{ formData.intro.designation }</div>
                     </div>
                 </div>
 
                 <div className='d-flex justify-content-between mt-3'>
-                    <button className='btn btn-secondary btn-sm px-3' onClick={Previous}>Previous</button>
-                    <button className='btn btn-success btn-sm px-3' onClick={Export} id="export-button">Export as PDF</button> 
+                    <button className='btn btn-secondary btn-sm px-3' onClick={() => prevStep()}>Previous</button>
+                    <button className='btn btn-success btn-sm px-3' id="export-button" onClick={Export}>Export as PDF</button> 
                 </div>
-
+                
             </div>
         </div>
     )
